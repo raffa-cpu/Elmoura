@@ -37,7 +37,7 @@ function renderHeader(activePage) {
 
     </div>
 
-    <a href="profil.html" class="${linkClass('profil')}">
+    <a href="#" class="${linkClass('profil')}" onclick="event.preventDefault(); bukaProfil();">
         Profil Toko
     </a>
 
@@ -46,7 +46,7 @@ function renderHeader(activePage) {
 </nav>
 
         <div class="navbar-actions">
-          <a href="dashboard.html" class="icon-btn" title="Dashboard Order">📋</a>
+          <a href="#" class="icon-btn" title="Dashboard Order" onclick="event.preventDefault(); bukaDashboard();">📋</a>
           <a href="#" class="icon-btn cart-btn" title="Keranjang" onclick="event.preventDefault(); bukaKeranjang();">
             🛒
             <span class="cart-badge" data-cart-badge>0</span>
@@ -104,31 +104,8 @@ function renderFooter() {
         </div>
         <div class="footer-col">
           <h4>Bantuan</h4>
-          <a href="cara-pembelian.html">Cara Pembelian</a>
-          <a href="profil.html">Profil Toko</a>
-          <a href="dashboard.html">Dashboard Order</a>
-        </div>
-        <div class="footer-col">
-          <h4>Statistik Kunjungan</h4>
-          <div class="histats-box" id="histatsBox">
-            <!-- ================= HISTATS ================= -->
-            <!-- Ganti ID di bawah ini dengan Site ID Histats.com milik toko -->
-            <a href="https://www.histats.com" target="_blank" rel="noopener">
-              <img src="https://sstatic1.histats.com/0.gif?4000000&101" alt="statistik pengunjung" style="border:0" />
-            </a>
-            <script type="text/javascript">
-              var _Hasync = _Hasync || [];
-              _Hasync.push(['Histats.start', '1,4000000,4,0,0,0,00000000']);
-              _Hasync.push(['Histats.fasi', '1']);
-              _Hasync.push(['Histats.track_hits', '']);
-              (function () {
-                var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-                hs.src = ('//s10.histats.com/js15_as.js');
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-              })();
-            </script>
-            <p class="histats-note">Widget statistik pengunjung (Histats)</p>
-          </div>
+          <a href="#" onclick="event.preventDefault(); bukaProfil();">Profil Toko</a>
+          <a href="#" onclick="event.preventDefault(); bukaDashboard();">Dashboard Order</a>
         </div>
       </div>
       <div class="footer-bottom">

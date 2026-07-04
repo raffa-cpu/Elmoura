@@ -338,6 +338,99 @@
   </div>
 </div>
 
+<!-- ================= PROFIL TOKO ================= -->
+
+<div id="profilModal" class="modal">
+  <div class="modal-page">
+    <div class="container">
+
+      <button class="back-link" onclick="tutupProfil()">← Kembali ke katalog</button>
+
+      <div class="store-header">
+        <div class="store-avatar">
+          <img src="images/logo-toko.png" alt="Elmoura"
+            onerror="this.remove(); this.parentElement.textContent='EL';">
+        </div>
+        <div class="store-meta">
+          <h1>Elmoura Official Store</h1>
+          <div class="tagline">Perangkat komputer harian sampai gaming — mouse, keyboard, dan monitor.</div>
+          <div class="rating">★★★★★ 4.9 &nbsp;•&nbsp; Bergabung sejak 2024 &nbsp;•&nbsp; Tangerang, Indonesia</div>
+        </div>
+        <div class="store-cta">
+          <a class="btn btn-dark" href="https://wa.me/089661994434?text=Halo%20Elmoura%2C%20saya%20ingin%20bertanya%20mengenai%20produk." target="_blank" rel="noopener">💬 Chat</a>
+          <button class="btn btn-primary" onclick="tutupProfil()">Lihat Semua Produk</button>
+        </div>
+      </div>
+
+      <div class="store-stats">
+        <div class="stat-box"><div class="num">9</div><div class="label">Produk</div></div>
+        <div class="stat-box"><div class="num">1.2rb</div><div class="label">Pengikut</div></div>
+        <div class="stat-box"><div class="num">4.9 / 5</div><div class="label">Penilaian Toko</div></div>
+        <div class="stat-box"><div class="num">98%</div><div class="label">Tingkat Respons</div></div>
+      </div>
+
+      <div class="prose">
+        <h2>Tentang Toko</h2>
+        <p>Elmoura adalah toko online yang fokus menjual perangkat komputer harian sampai gaming: mouse, keyboard, dan monitor. Semua produk dipilih berdasarkan kualitas dan harga yang jujur, cocok untuk kerja, belajar, maupun bermain game.</p>
+
+        <h2>Kenapa Belanja di Elmoura?</h2>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="icon">✅</div>
+          <h4>Produk Original</h4>
+          <p>Semua perangkat dijamin asli dan bergaransi resmi.</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">🚚</div>
+          <h4>Pengiriman Cepat</h4>
+          <p>Diproses dalam 1x24 jam setelah pesanan dikonfirmasi.</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">💬</div>
+          <h4>Respon Cepat</h4>
+          <p>Tim kami siap membantu lewat chat WhatsApp setiap hari.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= DASHBOARD ORDER ================= -->
+
+<div id="dashboardModal" class="modal">
+  <div class="modal-page">
+    <div class="container" style="max-width:900px;">
+
+      <button class="back-link" onclick="tutupDashboard()">← Kembali ke katalog</button>
+
+      <div class="page-head">
+        <h1>📋 Pesanan Saya</h1>
+        <p>Riwayat semua pesanan yang pernah kamu buat di Elmoura.</p>
+      </div>
+
+      <div class="tab-row" id="orderTabs">
+        <button class="tab-btn active" data-filter="semua" onclick="filterDashboard(this)">Semua</button>
+        <button class="tab-btn" data-filter="diproses" onclick="filterDashboard(this)">Diproses</button>
+        <button class="tab-btn" data-filter="dikirim" onclick="filterDashboard(this)">Dikirim</button>
+        <button class="tab-btn" data-filter="selesai" onclick="filterDashboard(this)">Selesai</button>
+      </div>
+
+      <div id="orderEmptyState" class="empty-state" style="display:none;">
+        <div class="icon">📋</div>
+        <h3>Belum ada pesanan</h3>
+        <p>Semua pesanan yang kamu buat akan muncul di sini.</p>
+        <button class="btn btn-primary" style="margin-top:16px;" onclick="tutupDashboard()">Mulai Belanja</button>
+      </div>
+
+      <div id="orderList"></div>
+
+    </div>
+  </div>
+</div>
+
 <div id="toastNotif" class="toast-notif"></div>
 
 <script src="Data.js"></script>
@@ -345,6 +438,7 @@
 <script src="Components.js"></script>
 <script src="detail.js"></script>
 <script src="checkout.js"></script>
+<script src="pages.js"></script>
 
 <script>
 
@@ -463,4 +557,3 @@ function kembaliHome(){
 
 </body>
 </html>
-

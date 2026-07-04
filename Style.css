@@ -962,7 +962,7 @@ table.data-table tr:hover td { background: var(--bg-elevated); }
 .stat-card .num { font-family: var(--font-display); font-size: 1.7rem; margin-top: 8px; color: var(--yellow); }
 @media (max-width: 860px) { .stat-cards { grid-template-columns: 1fr 1fr; } }
 
-/* =============== STATIC PAGES (profil, cara pembelian) =============== */
+/* =============== PROFIL TOKO =============== */
 
 .prose { max-width: 720px; }
 .prose p { color: var(--text-muted); margin-bottom: 16px; }
@@ -979,6 +979,107 @@ table.data-table tr:hover td { background: var(--bg-elevated); }
 .info-card h4 { font-size: 0.95rem; margin-bottom: 6px; }
 .info-card p { color: var(--text-muted); font-size: 0.85rem; }
 @media (max-width: 760px) { .info-grid { grid-template-columns: 1fr; } }
+
+
+.store-header {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px 0 0;
+}
+.store-avatar {
+  width: 92px; height: 92px;
+  background: var(--yellow);
+  color: #0b0b0c;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.store-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.store-meta { flex: 1; min-width: 220px; padding-top: 4px; }
+.store-meta h1 { font-size: 1.5rem; }
+.store-meta .tagline { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+.store-meta .rating { color: var(--yellow); font-size: 0.85rem; margin-top: 6px; font-family: var(--font-mono); }
+.store-cta { margin-left: auto; padding-top: 4px; display: flex; gap: 10px; }
+@media (max-width: 640px) {
+  .store-cta { margin-left: 0; }
+}
+
+.store-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 28px 0 40px;
+}
+.store-stats .stat-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 18px;
+  text-align: center;
+}
+.store-stats .stat-box .num { font-size: 1.3rem; color: var(--yellow); font-family: var(--font-mono); font-weight: 700; }
+.store-stats .stat-box .label { color: var(--text-muted); font-size: 0.78rem; margin-top: 4px; }
+@media (max-width: 700px) { .store-stats { grid-template-columns: 1fr 1fr; } }
+
+/* =============== DASHBOARD ORDER =============== */
+
+.tab-row {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  margin: 24px 0;
+  overflow-x: auto;
+}
+.tab-btn {
+  background: none; border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.tab-btn.active { color: var(--yellow); border-color: var(--yellow); }
+
+.order-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+.order-card .order-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.status-badge {
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+.order-card .order-body { padding: 16px 20px; }
+.order-card .order-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.order-card .order-foot .total { font-family: var(--font-mono); color: var(--yellow); font-weight: 700; }
 
 /* =============== WHATSAPP FLOAT =============== */
 
@@ -1026,15 +1127,13 @@ table.data-table tr:hover td { background: var(--bg-elevated); }
   margin: 0 auto;
   padding: 50px 24px 30px;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1.4fr 1fr 1fr;
   gap: 30px;
 }
 .footer-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-faint); margin-bottom: 14px; font-family: var(--font-mono); }
 .footer-col p { color: var(--text-muted); font-size: 0.85rem; margin-top: 12px; }
 .footer-col a { display: block; color: var(--text-muted); font-size: 0.88rem; padding: 5px 0; }
 .footer-col a:hover { color: var(--yellow); }
-.histats-box { font-size: 0.75rem; color: var(--text-faint); }
-.histats-note { margin-top: 8px; }
 .footer-bottom {
   border-top: 1px solid var(--border);
   text-align: center;

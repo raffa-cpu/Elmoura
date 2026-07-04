@@ -68,7 +68,7 @@ const PRODUK = [
       },
       {
         nama: "Wireless",
-        harga: 225000
+        harga: 245000
       }
     ]
   },
@@ -85,7 +85,7 @@ const PRODUK = [
     varian: [
       {
         nama: "Wired",
-        harga: 240000
+        harga: 220000
       },
       {
         nama: "Wireless",
@@ -108,15 +108,15 @@ const PRODUK = [
     varian: [
       {
         nama: "60% Red Switch",
-        harga: 205000
+        harga: 185000
       },
       {
         nama: "75% Brown Switch",
-        harga: 350000
+        harga: 450000
       },
       {
         nama: "100% Red Switch Wireless",
-        harga: 394000
+        harga: 650000
       }
     ]
   },
@@ -133,15 +133,15 @@ const PRODUK = [
     varian: [
       {
         nama: "60% Red Switch",
-        harga: 231000
+        harga: 185000
       },
       {
         nama: "75% Brown Switch",
-        harga: 453000
+        harga: 450000
       },
       {
         nama: "100% Red Switch Wireless",
-        harga: 500000
+        harga: 650000
       }
     ]
   },
@@ -159,11 +159,11 @@ const PRODUK = [
     varian: [
       {
         nama: "60% Red Switch",
-        harga: 285000
+        harga: 185000
       },
       {
         nama: "75% Brown Switch",
-        harga: 550000
+        harga: 450000
       },
       {
         nama: "100% Red Switch Wireless",
@@ -186,15 +186,15 @@ const PRODUK = [
     varian: [
       {
         nama: "24 Inch 165Hz IPS",
-        harga: 2300000
+        harga: 1850000
       },
       {
         nama: "27 Inch 165Hz IPS",
-        harga: 3150000
+        harga: 2150000
       },
       {
         nama: "27 Inch 180Hz VA",
-        harga: 3750000
+        harga: 2050000
       }
     ]
   },
@@ -211,15 +211,15 @@ const PRODUK = [
     varian: [
       {
         nama: "24 Inch 165Hz IPS",
-        harga: 3900000
+        harga: 1850000
       },
       {
         nama: "27 Inch 165Hz IPS",
-        harga: 4730000
+        harga: 2150000
       },
       {
         nama: "27 Inch 180Hz VA",
-        harga: 5380000
+        harga: 2050000
       }
     ]
   },
@@ -237,15 +237,15 @@ const PRODUK = [
     varian: [
       {
         nama: "24 Inch 165Hz IPS",
-        harga: 4700000
+        harga: 1850000
       },
       {
         nama: "27 Inch 165Hz IPS",
-        harga: 5950000
+        harga: 2150000
       },
       {
         nama: "27 Inch 180Hz VA",
-        harga: 6050000
+        harga: 2050000
       }
     ]
   }
