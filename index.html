@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elmoura — Perangkat Komputer: Mouse, Keyboard, Monitor</title>
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<div id="elmoura-header"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-eyebrow">// Toko Perangkat Komputer</span>
+      <h1>Setup kerja & gaming kamu, dimulai dari <em>Elmoura</em>.</h1>
+      <p>Mouse, keyboard, dan monitor pilihan dengan spesifikasi jelas dan harga jujur — dari harian sampai kompetitif.</p>
+      <div class="hero-actions">
+        
+        <a href="#produk-pilihan" class="btn btn-primary btn-lg">Lihat Produk Pilihan</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual">
+    <img src="images/setup-komputer.jpg" alt="setup-komputer" class="hero-img">
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIARAN PROMOSI (poin 3) ============ -->
+<div class="siaran-strip">
+  <div class="siaran-track">
+    <span>📣 PROMO: Elmoura Talon M2 diskon spesial minggu ini</span>
+    <span>🚚 Gratis ongkir se-Jabodetabek min. belanja Rp500.000</span>
+    <span>🔥 Elmoura Nova K3 — mechanical hot-swap, harga spesial</span>
+    <span>🖥️ Elmoura Horizon D3 curved QHD kini lebih hemat</span>
+    <span>📣 PROMO: Elmoura Talon M2 diskon spesial minggu ini</span>
+    <span>🚚 Gratis ongkir se-Jabodetabek min. belanja Rp500.000</span>
+    <span>🔥 Elmoura Nova K3 — mechanical hot-swap, harga spesial</span>
+    <span>🖥️ Elmoura Horizon D3 curved QHD kini lebih hemat</span>
+  </div>
+</div>
+
+<!-- ============ KATEGORI ============ -->
+<section class="section container">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">// Kategori</span>
+      <h2>Pilih kebutuhan kamu</h2>
+      <p>Tiga kategori utama, masing-masing punya beberapa produk dengan varian dan harga berbeda.</p>
+    </div>
+  </div>
+  <div class="grid-kategori" id="kategoriGrid"></div>
+</section>
+
+<section class="section container" id="hasilKategori" style="display:none;">
+
+    <div class="section-head">
+        <div>
+            <span class="eyebrow">// Kategori</span>
+            <h2 id="judulKategori"></h2>
+            <br>
+
+<button class="btn btn-primary" onclick="kembaliHome()">
+← Kembali
+</button>
+        </div>
+    </div>
+
+    <div class="grid-produk" id="kategoriProduk"></div>
+
+</section>
+
+<!-- ============ PRODUK PILIHAN (poin 2 — tampil paling atas produk) ============ -->
+<section class="section container" id="produk-pilihan">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">// Produk Pilihan</span>
+      <h2>Rekomendasi Elmoura</h2>
+      <p>Produk yang paling sering direkomendasikan tim kami, ditampilkan lebih dulu.</p>
+    </div>
+  </div>
+  <div class="grid-produk" id="produkPilihanGrid"></div>
+</section>
+
+<!-- ============ PROMO BANNER (poin d — promo produk) ============ -->
+<section class="container">
+  <div class="promo-banner notched">
+    <div class="js">
+      <span class="eyebrow">Promo Minggu Ini</span>
+      <h2>Diskon sampai 20% untuk produk terpilih</h2>
+      <p>Berlaku untuk Talon M2, Nova K3, dan Horizon D3 selama stok masih ada.</p>
+    </div>
+    <a href="kategori.html?cat=mouse" class="btn btn-dark">Belanja Sekarang →</a>
+  </div>
+</section>
+
+<!-- ============ SEMUA PRODUK ============ -->
+<section class="section container">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">// Semua Produk</span>
+      <h2>Katalog Lengkap</h2>
+    </div>
+  </div>
+  <div class="grid-produk" id="semuaProdukGrid"></div>
+</section>
+
+<div id="elmoura-footer"></div>
+<div id="elmoura-wa"></div>
+
+<!-- ================= DETAIL PRODUK ================= -->
+
+<!-- ================= DETAIL PRODUK ================= -->
+
+<div id="detailModal" class="modal">
+
+  <div class="modal-page">
+    <div class="container">
+
+      <button class="back-link" onclick="tutupDetail()">← Kembali ke katalog</button>
+
+      <div class="breadcrumb">
+        <span id="detailKategori"></span>
+        <span class="sep">/</span>
+        <span class="current" id="detailNamaBreadcrumb"></span>
+      </div>
+
+      <div class="produk-detail">
+
+        <div class="produk-media">
+          <img id="detailGambar" src="" class="detail-img">
+        </div>
+
+        <div class="produk-info">
+
+          <h1 id="detailNama"></h1>
+
+          <div class="harga-block">
+            <span id="detailHarga" class="harga"></span>
+          </div>
+
+          <p id="detailDeskripsi" class="deskripsi"></p>
+
+          <div class="varian-block">
+            <label>Pilih Varian</label>
+            <div id="detailVarian" class="varian-options"></div>
+          </div>
+
+          <div class="qty-block">
+            <label>Jumlah</label>
+            <div class="qty-stepper">
+              <button onclick="kurangQty()">-</button>
+              <input type="text" id="qtyProduk" value="1" readonly>
+              <button onclick="tambahQty()">+</button>
+            </div>
+          </div>
+
+          <div class="subtotal-box">
+            <span>Subtotal</span>
+            <strong id="detailSubtotal"></strong>
+          </div>
+
+          <div class="produk-cta">
+            <button class="btn btn-dark btn-lg" onclick="tambahKeranjang()">
+              Tambah ke Keranjang
+            </button>
+            <button class="btn btn-primary btn-lg" onclick="beliSekarang()">
+              Beli Sekarang
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= KERANJANG ================= -->
+
+<div id="cartModal" class="modal">
+  <div class="modal-page">
+    <div class="container">
+
+      <button class="back-link" onclick="tutupKeranjang()">← Kembali ke katalog</button>
+
+      <div class="page-head">
+        <h1>🛒 Keranjang Belanja</h1>
+        <p>Periksa kembali produk pilihanmu sebelum lanjut ke pembayaran.</p>
+      </div>
+
+      <div id="cartEmptyState" class="empty-state" style="display:none;">
+        <div class="icon">🛒</div>
+        <h3>Keranjang kamu masih kosong</h3>
+        <p>Yuk mulai belanja perangkat komputer favoritmu di Elmoura.</p>
+        <button class="btn btn-primary" style="margin-top:16px;" onclick="tutupKeranjang()">Mulai Belanja</button>
+      </div>
+
+      <div id="cartLayoutWrap" class="cart-layout">
+        <div>
+          <label class="select-all-row">
+            <input type="checkbox" id="selectAllCart" onchange="toggleSelectAllCart(this)">
+            Pilih Semua
+          </label>
+          <div id="cartList"></div>
+        </div>
+
+        <div class="summary-box">
+          <h3>Ringkasan Belanja</h3>
+          <div class="summary-row">
+            <span>Total (<span id="cartSelectedCount">0</span> barang)</span>
+            <span class="val" id="cartSubtotal">Rp0</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total Harga</span>
+            <span class="val" id="cartTotal">Rp0</span>
+          </div>
+          <button class="btn btn-primary btn-lg" style="width:100%; margin-top:16px;" id="btnCheckoutCart" onclick="lanjutkanCheckout()">
+            Checkout
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= CHECKOUT ================= -->
+
+<div id="checkoutModal" class="modal">
+  <div class="modal-page">
+    <div class="container" style="max-width:900px;">
+
+      <button class="back-link" onclick="tutupCheckout()">← Kembali</button>
+
+      <div class="checkout-progress">
+        <div class="dot done">✓</div><div class="line"></div>
+        <div class="dot active">2</div><div class="line"></div>
+        <div class="dot">3</div>
+      </div>
+
+      <div id="checkoutForm">
+
+        <div class="panel">
+          <h3>📍 Alamat Pengiriman</h3>
+          <div class="form-group">
+            <label>Nama Penerima</label>
+            <input type="text" id="ckNama" placeholder="Nama lengkap penerima">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>No. HP</label>
+              <input type="text" id="ckHp" placeholder="08xxxxxxxxxx">
+            </div>
+            <div class="form-group">
+              <label>Kota / Kabupaten</label>
+              <input type="text" id="ckKota" placeholder="Contoh: Tangerang">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Alamat Lengkap</label>
+            <textarea id="ckAlamat" rows="3" placeholder="Nama jalan, nomor rumah, RT/RW, kecamatan, kode pos"></textarea>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>📦 Ringkasan Pesanan</h3>
+          <div id="checkoutItemList"></div>
+        </div>
+
+        <div class="panel">
+          <h3>🚚 Metode Pengiriman</h3>
+          <div class="ship-option selected" data-kode="reguler" data-biaya="15000" onclick="pilihPengiriman(this)">
+            <span class="icon">🚚</span>
+            <div class="info"><b>Reguler (2–3 hari)</b><span>Estimasi tiba lebih lama, lebih hemat</span></div>
+            <span class="harga-satuan">Rp15.000</span>
+          </div>
+          <div class="ship-option" data-kode="instan" data-biaya="25000" onclick="pilihPengiriman(this)">
+            <span class="icon">⚡</span>
+            <div class="info"><b>Instan (Hari ini)</b><span>Sampai di hari yang sama</span></div>
+            <span class="harga-satuan">Rp25.000</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>💳 Metode Pembayaran</h3>
+          <div class="pay-option selected" data-kode="bca" onclick="pilihPembayaran(this)">
+            <img src="images/logo-bank/bca.png" alt="BCA">
+            <div class="info"><b>Transfer Bank BCA</b><span>Virtual Account</span></div>
+          </div>
+          <div class="pay-option" data-kode="bri" onclick="pilihPembayaran(this)">
+            <img src="images/logo-bank/bri.png" alt="BRI">
+            <div class="info"><b>Transfer Bank BRI</b><span>Virtual Account</span></div>
+          </div>
+          <div class="pay-option" data-kode="mandiri" onclick="pilihPembayaran(this)">
+            <img src="images/logo-bank/mandiri.png" alt="Mandiri">
+            <div class="info"><b>Transfer Bank Mandiri</b><span>Virtual Account</span></div>
+          </div>
+          <div class="pay-option" data-kode="qris" onclick="pilihPembayaran(this)">
+            <img src="images/payment/qris.png" alt="QRIS">
+            <div class="info"><b>QRIS</b><span>Scan &amp; bayar instan</span></div>
+          </div>
+          <div class="pay-option" data-kode="cod" onclick="pilihPembayaran(this)">
+            <span class="icon">💵</span>
+            <div class="info"><b>Bayar di Tempat (COD)</b><span>Bayar tunai saat pesanan tiba</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Ringkasan Pembayaran</h3>
+          <div class="summary-row"><span>Subtotal Produk</span><span class="val" id="ckSubtotal">Rp0</span></div>
+          <div class="summary-row"><span>Biaya Pengiriman</span><span class="val" id="ckOngkir">Rp0</span></div>
+          <div class="summary-row total"><span>Total Pembayaran</span><span class="val" id="ckTotal">Rp0</span></div>
+          <button class="btn btn-primary btn-lg" style="width:100%; margin-top:18px;" onclick="buatPesanan()">
+            Buat Pesanan
+          </button>
+        </div>
+
+      </div>
+
+      <div id="checkoutConfirm" class="confirm-box" style="display:none;">
+        <div class="confirm-icon">✓</div>
+        <h2>Pesanan Berhasil Dibuat!</h2>
+        <p>Terima kasih sudah belanja di Elmoura. Silakan selesaikan pembayaran sesuai metode yang kamu pilih.</p>
+        <div class="confirm-id" id="ckOrderId"></div>
+        <div>
+          <button class="btn btn-primary btn-lg" onclick="selesaiCheckout()">Kembali ke Beranda</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="toastNotif" class="toast-notif"></div>
+
+<script src="Data.js"></script>
+<script src="cart.js"></script>
+<script src="Components.js"></script>
+<script src="detail.js"></script>
+<script src="checkout.js"></script>
+
+<script>
+
+renderHeader('home');
+
+</script>
+
+<script>
+  // ---- Render kategori ----
+  const katGrid = document.getElementById('kategoriGrid');
+  katGrid.innerHTML = KATEGORI.map(k => `
+<a href="#" onclick="tampilKategori('${k.id}')" class="card-kategori"> 
+
+    <img src="${k.gambar}" class="kategori-img" alt="${k.nama}">
+
+    <h3>${k.nama}</h3>
+
+    <p>${k.tagline}</p>
+
+    <span class="go">
+        Lihat produk →
+    </span>
+
+</a>
+`).join('');
+  // ---- Kartu produk (reusable) ----
+  function cardProdukHTML(p) {
+    const kat = getKategoriById(p.kategori);
+    const hargaMin = getHargaTermurah(p);
+    return `
+      <a href="#"
+onclick="bukaDetail('${p.id}')"
+class="card-produk">
+        <div class="thumb">
+
+    <div class="badges">
+
+        ${p.pilihan ? '<span class="badge badge-yellow">Pilihan</span>' : ''}
+
+        ${p.promo ? '<span class="badge badge-danger">Promo</span>' : ''}
+
+    </div>
+
+    <img src="${p.gambar}" class="produk-img" alt="${p.nama}">
+
+</div>
+        <div class="body">
+          <span class="kat-label">${kat.nama}</span>
+          <h3>${p.nama}</h3>
+          <p class="ringkas">${p.ringkas}</p>
+          <span class="harga-mulai">Mulai dari</span>
+          <div class="harga-row">
+            ${p.promo ? `<span class="harga-coret">${formatRupiah(p.hargaCoret)}</span>` : ''}
+            <span class="harga">${formatRupiah(hargaMin)}</span>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
+  document.getElementById('produkPilihanGrid').innerHTML =
+    PRODUK.filter(p => p.pilihan).map(cardProdukHTML).join('');
+
+  document.getElementById('semuaProdukGrid').innerHTML =
+    PRODUK.map(cardProdukHTML).join('');
+
+       
+
+    function tampilKategori(id){
+   
+    const kategori = getKategoriById(id);
+
+    // sembunyikan halaman utama
+    document.querySelector(".hero").style.display="none";
+    document.querySelector(".siaran-strip").style.display="none";
+    document.querySelector("#kategoriGrid").parentElement.style.display="none";
+    document.querySelector("#produk-pilihan").style.display="none";
+    document.querySelector(".promo-banner").parentElement.style.display="none";
+    document.querySelector("#semuaProdukGrid").parentElement.style.display="none";
+
+    // tampilkan halaman kategori
+    document.getElementById("hasilKategori").style.display="block";
+
+    document.getElementById("judulKategori").innerHTML=kategori.nama;
+
+    const data=PRODUK.filter(p=>p.kategori===id);
+
+    document.getElementById("kategoriProduk").innerHTML=
+    data.map(cardProdukHTML).join('');
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+function kembaliHome(){
+
+    document.querySelector(".hero").style.display="";
+    document.querySelector(".siaran-strip").style.display="";
+    document.querySelector("#kategoriGrid").parentElement.style.display="";
+    document.querySelector("#produk-pilihan").style.display="";
+    document.querySelector(".promo-banner").parentElement.style.display="";
+    document.querySelector("#semuaProdukGrid").parentElement.style.display="";
+
+    document.getElementById("hasilKategori").style.display="none";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+</script>
+
+</body>
+</html>
